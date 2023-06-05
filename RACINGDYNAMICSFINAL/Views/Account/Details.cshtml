@@ -1,0 +1,70 @@
+﻿@model RACINGDYNAMICSFINAL.Models.CarsTable
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CarsTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            @Html.DisplayFor(model => model.car_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.car_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.car_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.car_year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.car_year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.car_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.car_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.car_engine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.car_engine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.car_image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.car_image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.car_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.car_type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {id = Model.car_id }) |
+</p>

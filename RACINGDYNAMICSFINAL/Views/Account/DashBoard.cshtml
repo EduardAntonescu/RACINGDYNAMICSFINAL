@@ -1,0 +1,43 @@
+﻿@model List<RACINGDYNAMICSFINAL.Models.CarsTable>
+
+@{
+    ViewBag.Title = "DashBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DashBoard</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddCar", "AddCar")
+</p>
+<table class="table">
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.car_name
+        </td>
+        <td>
+            @item.car_year
+        </td>
+        <td>
+            @item.car_description
+        </td>
+        <td>
+            @item.car_engine
+        </td>
+        <td>
+            @item.car_type
+        </td>
+        <td>
+            @item.car_image
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.car_id }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.car_id }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.car_id  })
+        </td>
+    </tr>
+}
+
+</table>

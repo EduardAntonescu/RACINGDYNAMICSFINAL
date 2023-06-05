@@ -1,0 +1,46 @@
+﻿@model List<RACINGDYNAMICSFINAL.Models.UserRequestCars>
+
+@{
+    ViewBag.Title = "MyRequests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>My Requests</h2>
+
+@if (Model.Count == 0)
+{
+    <p>You have no requests.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Request ID</th>
+                <th>Car Name</th>
+                <th>Car Image</th>
+                <th>Car Type</th>
+                <th>Car Engine</th>
+                <th>Car Description</th>
+                <th>Car Year</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model)
+            {
+                <tr>
+                    <td>@request.RequestId</td>
+                    <td>@request.CarName</td>
+                    <td>@request.CarImage</td>
+                    <td>@request.CarType</td>
+                    <td>@request.CarEngine</td>
+                    <td>@request.CarDescription</td>
+                    <td>@request.CarYear</td>
+                    <td>@request.RequestStatus</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,71 @@
+﻿@model RACINGDYNAMICSFINAL.Models.UserRequestCars
+
+@{
+    ViewBag.Title = "AddRequest";
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-create">
+    <h4 class="title-login-signup">Help us grow!</h4>
+    <h4 class="title-login-signup">Submit a request</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-child">
+        @Html.LabelFor(model => model.CarName)
+        <div class="form-child-box">
+            @Html.EditorFor(model => model.CarName)
+        </div>
+    </div>
+
+    <div class="form-child">
+        @Html.LabelFor(model => model.CarYear)
+        <div class="form-child-box">
+            @Html.EditorFor(model => model.CarYear)
+        </div>
+    </div>
+
+    <div class="form-child">
+        @Html.LabelFor(model => model.CarDescription)
+        <div class="form-child-box">
+            @Html.EditorFor(model => model.CarDescription)
+        </div>
+    </div>
+
+    <div class="form-child">
+        @Html.LabelFor(model => model.CarEngine)
+        <div class="form-child-box">
+            @Html.EditorFor(model => model.CarEngine)
+        </div>
+    </div>
+
+    <div class="form-child">
+        @Html.LabelFor(model => model.CarImage)
+        <div class="form-child-box">
+            <input type="file" id="CarImage" name="CarImage" />
+        </div>
+    </div>
+
+    <div class="form-child">
+        @Html.LabelFor(model => model.CarType)
+        <div class="form-child-dropdown">
+            @Html.DropDownListFor(model => model.CarType, new List<SelectListItem>
+            {
+                new SelectListItem { Text = "JDM", Value = "JDM" },
+                new SelectListItem { Text = "European Market", Value = "EuropeanMarket" },
+                new SelectListItem { Text = "American Market", Value = "AmericanMarket" }
+            }, "Select car type")
+        </div>
+    </div>
+
+    <div class="form-child">
+        <div class="buton-create">
+            <input type="submit" value="Create" />
+        </div>
+    </div>
+</div>
+}
+

@@ -1,0 +1,22 @@
+﻿@model List<RACINGDYNAMICSFINAL.Models.CarsTable>
+
+@{
+    ViewBag.Title = "European Market";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="titlu-car-pages">European Market</h2>
+
+<div class="car-grid">
+    @foreach (var item in Model)
+    {
+        <div class="car-card">
+            <a href="@Url.Action("Details", "Account", new { id = item.car_id})">
+                <img src="@item.car_image" alt="@item.car_name" class="car-image" />
+                <h3>@item.car_name</h3>
+            </a>
+        </div>
+     }
+</div>
+        
+

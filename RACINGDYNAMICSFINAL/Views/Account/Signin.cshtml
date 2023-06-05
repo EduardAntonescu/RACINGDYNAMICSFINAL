@@ -1,0 +1,38 @@
+﻿@model RACINGDYNAMICSFINAL.Models.CreateAccount
+
+@{
+    ViewBag.Title = "Signin";
+}
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-signin-signup">
+            <h4 class="title-login-signup">Sign in</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-child">
+                @Html.LabelFor(model => model.UserName)
+                <div class="form-child-box">
+                    @Html.EditorFor(model => model.UserName)
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-child">
+                @Html.LabelFor(model => model.Password)
+                <div class="form-child-box">
+                    @Html.PasswordFor(model => model.Password)
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-child">
+                <div class="buton-create">
+                    <input type="submit" value="Sign In" />
+                </div>
+            </div>
+        </div>
+    }
+
+

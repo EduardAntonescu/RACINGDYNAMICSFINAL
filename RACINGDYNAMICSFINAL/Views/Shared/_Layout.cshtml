@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/Content/racing-dynamics-website-favicon-color.png">
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <nav class="mainnav">
+
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">Racing Dynamics</a>
+            <div class="div-nav">
+                <ul class="lista-navbar">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")">Home</a>
+                    </li>
+                    <li class="lista-cars">
+                        <p class="p-cars">Cars</p>
+                        <ul class="lista-cars-ul">
+                            <li><a href="@Url.Action("JDM", "Home")">Japanese Domestic Market</a></li>
+                            <li><a href="@Url.Action("EuropeanMarket", "Home")">European Market</a></li>
+                            <li><a href="@Url.Action("AmericanMarket", "Home")">American Market</a></li>
+                        </ul>
+                    </li>
+                    @if (Session["Username"] != null)
+                    {
+                        if (Session["Username"].ToString() == "eduard")
+                        {
+                            <li>
+                                <a href=@Url.Action("DashBoard", "Account")>Dashboard</a>
+                            </li>
+                            <li>
+                                <a href=@Url.Action("PendingRequests", "Account")>Requests</a>
+                            </li>
+                            <li>
+                                <a href=@Url.Action("Logout", "Account")>Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href=@Url.Action("MyAccount", "Account")>My Account</a>
+                            </li>
+                            <li>
+                                <a href=@Url.Action("Logout", "Account")>Logout</a>
+                            </li>
+                        }
+
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="@Url.Action("Signin", "Account")">Sign In</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Signup", "Account")">Sign Up</a>
+                        </li>
+
+                    }
+                </ul>
+            </div>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-body">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            &copy; 2023 - Racing Dynamics - all rights reserved
+        </div>
+    </footer>
+    <script src="~/Scripts/Site.js" asp-append-version="true"></script>
+</body>
+</html>

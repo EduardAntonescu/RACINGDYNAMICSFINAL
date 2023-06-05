@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "MyAccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hello @Session["Username"], here's your account</h2>
+
+<div class="row">
+    <div>
+        <a href="@Url.Action("AddRequest", "AddCar")">Create a new request</a>
+    </div>
+    <div>
+        <a href="@Url.Action("MyRequests", "AddCar")">My requests</a>
+    </div>
+</div>

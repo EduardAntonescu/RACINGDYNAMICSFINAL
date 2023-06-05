@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RACINGDYNAMICSFINAL.Models.UserRequestCars>
+
+@{
+    ViewBag.Title = "PendingRequests";
+}
+<div class="table-container">
+    <h2 class="titlu-car-pages">Pending Requests</h2>
+
+    <table class="table-requests">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RequestId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RequestUsername)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarYear)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarEngine)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarImage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarType)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Accept", new {requestId = item.RequestId})" class="accept-button">&#x2713;</a>
+                        <a href="@Url.Action("DetailsRequest", new {requestId = item.RequestId})">Details</a>
+                        <a href="@Url.Action("Deny", new { requestId = item.RequestId })" class="deny-button">&#x2716;</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td>
+                    <p class="norequests">There are no pending requests!</p>
+                </td>
+            </tr>
+
+        }
+
+    </table>
+</div>

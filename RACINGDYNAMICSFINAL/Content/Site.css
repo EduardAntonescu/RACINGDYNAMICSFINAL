@@ -1,0 +1,551 @@
+﻿html {
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    color: #062b57;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    display:flex;
+    flex-direction:column;
+}
+
+.footer-container {
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding: 40px;
+    padding-right: 0;
+    padding-left: 0;
+    background-color: white;
+    border-top: solid 3px #062b57;
+}
+
+.mainnav {
+    display: flex;
+    min-height: 8vh;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: solid 3px #062b57;
+}
+
+.navbar-brand {
+    display: flex;
+    font-size: 40px;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    color: #062b57;
+    text-decoration: none;
+    padding-left: 40px;
+}
+
+.div-nav {
+    width: 100%;
+    display:flex;
+    justify-content: flex-end;
+}
+
+.lista-navbar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+.lista-navbar li {
+    list-style: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.lista-navbar a {
+    color: #062b57;
+    text-decoration: none;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.lista-cars p {
+    cursor: pointer;
+    font-size: 30px;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-weight: bold;
+    color: #062b57;
+    margin: 0;
+    height: 30px;
+}
+
+
+
+.lista-cars-ul {
+    position: absolute;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: white;
+    top: 8vh;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom: solid 3px #062b57;
+    border-left: solid 3px #062b57;
+    border-right: solid 3px #062b57;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(-30px);
+    z-index: 4;
+}
+
+.lista-cars-ul li {
+    flex-wrap: wrap;
+    line-height: 70px;
+    justify-content: center;
+    align-content: center;
+}
+
+.lista-cars-ul li a {
+    font-size: 18px;
+}
+
+.lista-cars-ul-active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #062b57;
+    margin: 5px;
+    transition: all ease-in 0.2s;
+}
+
+
+@media screen and (max-width:1150px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar-brand {
+        font-size: 30px;
+    }
+
+    .div-nav {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: white;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        border-left: solid 3px #062b57;
+        z-index: 6;
+    }
+
+    .lista-navbar {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        width: 100%;
+    }
+
+
+    .lista-navbar a {
+        line-height: 100px;
+        font-size: 20px;     
+    }
+
+    .lista-cars p{
+        font-size: 20px;
+    }
+
+    .lista-cars a {
+        font-size: 15px;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+        width: 40px;
+    }
+
+    .burger-active {
+        width: 40px;
+    }
+
+    .burger-active div {
+        width: 30px;
+    }
+
+    .burger-active div.line1 {
+        transform: rotateZ(45deg) translateY(6px);
+    }
+
+    .burger-active div.line2 {
+        visibility: hidden;
+        opacity: 0;
+        width: 0px;
+        height: 0px;
+    }
+
+    .burger-active div.line3 {
+        transform: rotateZ(-45deg) translateY(-6px);
+    }
+
+    .div-nav.div-nav-active {
+        transform: translateX(0%);
+        justify-content: space-around;
+    }
+
+
+    .lista-cars-ul li a {
+        display: flex;
+        font-size: 13px;
+        height: 30px;
+        align-items: center;
+    }
+
+    .lista-cars-ul li {
+        display: flex;
+        height: 60px;
+        line-height: 20px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .lista-cars-ul {
+        left: 23%;
+        transform: translateY(-2px);
+    }
+
+    .lista-cars-ul-active {
+        display: block;
+        top: 15vh;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        padding-top: 0;
+        background-color: transparent;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navbar-brand {
+        font-size: 25px;
+    }
+
+    .burger div {
+        width: 20px;
+        height: 3px;
+        background-color: #062b57;
+        margin: 4px;
+        transition: all ease-in 0.2s;
+    }
+
+    .burger {
+        width: 30px;
+    }
+
+    .burger-active {
+        width: 30px;
+    }
+
+    .burger-active div {
+        width: 25px;
+    }
+
+    .burger-active div.line1 {
+        transform: rotateZ(45deg) translateY(5px);
+    }
+
+    .burger-active div.line3 {
+        transform: rotateZ(-45deg) translateY(-4.2px);
+    }
+
+    .lista-cars-ul {
+        left: 10%;
+        transform: translateY(10px);
+    }
+
+    .lista-cars-ul-active {
+        display: block;
+        top: 15vh;
+        left: 10%;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        padding-top: 0;
+        background-color: transparent;
+    }
+}
+
+@media screen and (max-width:1550px) {
+    .lista-navbar li{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .lista-navbar a{
+        font-size:20px;
+    }
+
+
+    .lista-cars p{
+        font-size:20px;
+    }
+}
+
+
+    /*################ Index ##################*/
+
+    .index-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .background-image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .index-container {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    p.titlu-index {
+        text-align: center;
+        font-size: 35px;
+        font-family: 'Montserrat Subrayada', sans-serif;
+        margin-top: 0;
+        padding-top: 50px;
+    }
+
+    p.text-index {
+        text-align: center;
+        font-size: 23px;
+    }
+
+    p.motto-index {
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Montserrat Subrayada', sans-serif;
+        padding-bottom: 50px;
+    }
+
+
+    /*########### JDM, EM, AM ############*/
+
+    .car-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding:30px;
+    }
+
+    .car-card {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .car-image {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    h2.titlu-car-pages {
+        font-size: 30px;
+        text-align: center;
+        font-family: 'Montserrat Subrayada', sans-serif;
+    }
+
+
+
+    /*################ Login SignUp #################*/
+
+    .form-signin-signup {
+        max-width: 400px;
+        margin: auto;
+        margin-top: 100px;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        z-index: 5;
+        margin-bottom: 100px;
+    }
+
+    .form-child {
+        margin-bottom: 10px;
+    }
+
+    .form-child-box {
+        display: flex;
+        height: 50px;
+        padding: 10px;
+    }
+
+    .form-child label {
+        display: inline-block;
+        width: 100%;
+        font-weight: bold;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+
+    .form-child-box input[type="text"],
+    .form-child-box input[type="password"] {
+        flex: 1;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .buton-create {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .buton-create input[type="submit"] {
+        font-size: 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #062b57;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        font-family: 'Montserrat Subrayada', sans-serif;
+    }
+
+    .buton-create input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .title-login-signup {
+        font-family: 'Montserrat Subrayada', sans-serif;
+        font-size: 30px;
+        text-align: center;
+    }
+
+
+    /*############ Admin Stuff ################*/
+
+    .table-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .accept-button {
+        display: inline-block;
+        background-color: #00cc00;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 50%;
+        text-decoration: none;
+    }
+
+    .deny-button {
+        display: inline-block;
+        background-color: #cc0000;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 50%;
+        text-decoration: none;
+    }
+
+    .norequests{
+        font-size: 20px;
+        display:block;
+        text-align:center;
+    }
+
+.table-requests {
+    border: solid 2px #062b57;
+    border-radius: 10px;
+}
+
+tr{
+    padding:10px;
+}
+
+
+/*############ Create/Request ################*/
+
+.form-create {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    margin-bottom: 100px;
+}
+
+.form-child-dropdown select {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #062b57;
+    width: 200px;
+    padding: 8px 12px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor:pointer;
+}
+
+    .form-child-dropdown select:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);  
+    }
+
+.form-child-dropdown option{
+    font-weight: bold;
+    cursor:pointer;
+}
